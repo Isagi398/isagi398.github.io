@@ -4,154 +4,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A student blog about learning web development, exploring psychology, and building projects in public.">
     <title>My Blog | Learning Web Development</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function () {
+            var t = localStorage.getItem("blog-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
 <body>
 
-    <!-- Header -->
     <header>
-
         <div class="header-container">
+            <a href="index.html" class="brand">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span>My Blog</span>
+            </a>
 
-            <h1>My Blog</h1>
+            <div class="header-actions">
+                <nav id="main-nav" aria-label="Primary navigation">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-            </nav>
+                <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme"></button>
 
+                <button type="button" id="menu-toggle" class="icon-btn menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-
     </header>
 
-
-    <!-- Main content -->
     <main>
-
         <section class="hero">
-
-            <h2>Learning, Building & Growing</h2>
-
-            <p>
-                I'm a student learning web development,
-                exploring psychology, and documenting my journey.
-            </p>
-
+            <div class="hero-content">
+                <span class="hero-badge">Learning in Public</span>
+                <h1>Learning, Building &amp; Growing</h1>
+                <p>
+                    I'm a student learning web development, exploring psychology, and documenting my journey one small project at a time.
+                </p>
+                <div class="hero-cta">
+                    <a href="#articles" class="btn btn-primary">Explore Articles ↓</a>
+                    <a href="about.html" class="btn btn-secondary">About Me</a>
+                </div>
+            </div>
         </section>
 
-
-        <!-- Articles -->
-
-        <section class="latest-articles">
-
+        <section id="articles" class="latest-articles">
+            <div class="section-header">
                 <h2>Latest Articles</h2>
+                <span id="article-count" class="article-count">4 articles</span>
+            </div>
 
-                    <div class="article-grid">
+            <div class="controls-bar">
+                <div class="filter-pills" role="group" aria-label="Filter articles by category">
+                    <button type="button" class="filter-pill active" data-filter="all">All</button>
+                    <button type="button" class="filter-pill" data-filter="web-development">Web Development</button>
+                    <button type="button" class="filter-pill" data-filter="learning">Learning</button>
+                    <button type="button" class="filter-pill" data-filter="self-improvement">Self Improvement</button>
+                </div>
 
-                <article class="article-card">
+                <div class="search-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" id="article-search" class="search-input" placeholder="Search articles... (press /)" aria-label="Search articles">
+                    <button type="button" id="search-clear" class="search-clear" aria-label="Clear search">×</button>
+                </div>
+            </div>
 
-                     <div class="category">
-                        WEB DEVELOPMENT
+            <div class="article-grid">
+
+                <article class="article-card" data-category="web-development">
+                    <div class="card-top">
+                        <span class="category" data-cat="web-development">Web Development</span>
+                        <span class="read-time">2 min read</span>
                     </div>
+                    <h3>What I Learned While Building My First Blog</h3>
+                    <p>
+                        The lessons, mistakes, and discoveries I made while building my first blog using HTML and CSS.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">Sep 1, 2026</span>
+                        <a class="read-more" href="building-my-first-blog.html">Read Article →</a>
+                    </div>
+                </article>
 
-                <h3>
-                    What I Learned While Building My First Blog
-                </h3>
+                <article class="article-card" data-category="learning">
+                    <div class="card-top">
+                        <span class="category" data-cat="learning">Learning</span>
+                        <span class="read-time">4 min read</span>
+                    </div>
+                    <h3>I Stopped Watching Tutorials and Started Building — Here's What Happened</h3>
+                    <p>
+                        How I went from getting stuck in tutorial loops to learning by building small projects.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">Sep 6, 2026</span>
+                        <a class="read-more" href="article-2.html">Read Article →</a>
+                    </div>
+                </article>
 
-                <p>
-                     The lessons, mistakes, and discoveries I made while
-                      building my first blog using HTML and CSS.
-                </p>
+                <article class="article-card" data-category="web-development">
+                    <div class="card-top">
+                        <span class="category" data-cat="web-development">Web Development</span>
+                        <span class="read-time">4 min read</span>
+                    </div>
+                    <h3>How I Discovered CSS While Experimenting With My First HTML Pages</h3>
+                    <p>
+                        How experimenting with HTML introduced me to CSS and taught me to learn through mistakes, experimentation, and problem-solving.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">Sep 15, 2026</span>
+                        <a class="read-more" href="article-3.html">Read Article →</a>
+                    </div>
+                </article>
 
-                <a class="read-more" href="building-my-first-blog.html">
-                     Read Article →
-                </a>
+                <article class="article-card coming-soon" data-category="self-improvement">
+                    <div class="card-top">
+                        <span class="category" data-cat="self-improvement">Self Improvement</span>
+                        <span class="read-time">Upcoming</span>
+                    </div>
+                    <h3>What Books Are Teaching Me About Learning</h3>
+                    <p>
+                        Some lessons I've discovered while reading self-improvement and psychology books.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">In Progress</span>
+                        <a class="read-more" href="#" data-coming-soon>Coming Soon →</a>
+                    </div>
+                </article>
 
-            </article>
+            </div>
 
-
-            <article class="article-card">
-
-                <div class="category">
-                   LEARNING
-                </div>
-
-                <h3>
-                    I Stopped Watching Tutorials and Started Building — Here's What Happened
-                </h4>
-
-                <p>
-                    How I went from getting stuck in tutorial loops to learning by building small projects.
-                </p>
-
-                <a class="read-more" href="article-2.html">
-                     Read Article →
-                </a>
-
-            </article>
-
-<article class="article-card">
-
-    <div class="category">
-        WEB DEVELOPMENT
-    </div>
-
-    <h3>
-        How I Discovered CSS While Experimenting With My First HTML Pages
-    </h3>
-
-    <p>
-        How experimenting with HTML introduced me to CSS and taught me
-        to learn through mistakes, experimentation, and problem-solving.
-    </p>
-
-    <a class="read-more" href="article-3.html">
-        Read Article →
-    </a>
-
-</article>
-
-            <article class="article-card">
-
-                <div class="category">
-                    SELF IMPROVEMENT
-                </div>
-
-                <h3>
-                    What Books Are Teaching Me About Learning
-                </h3>
-
-                <p>
-                    Some lessons I've discovered while reading
-                    self-improvement and psychology books.
-                </p>
-
-                <a class="read-more" href="#">
-                    Coming Soon →
-                </a>
-
-            </article>
-
-        </div>
-
+            <div id="empty-state" class="empty-state" role="status" aria-live="polite">
+                <h3>No matching articles found</h3>
+                <p>Try a different keyword or clear the category filter.</p>
+                <button type="button" id="reset-filters" class="btn btn-secondary">Reset Filters</button>
+            </div>
         </section>
-
     </main>
 
-
-    <!-- Footer -->
-
     <footer>
-
-        <p>
-            © 2026 My Blog. Built while learning web development.
-        </p>
-
+        <div class="footer-container">
+            <p>© 2026 My Blog. Built while learning web development.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
     </footer>
 
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

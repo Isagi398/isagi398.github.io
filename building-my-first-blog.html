@@ -3,115 +3,132 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Article Title | My Blog</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What I learned, what confused me, and what changed when I built my first blog using HTML and CSS.">
+    <meta name="author" content="Isagi">
+    <link rel="canonical" href="https://isagi398.github.io/building-my-first-blog.html">
+    <title>What I Learned While Building My First Blog With HTML and CSS | My Blog</title>
+    <script>
+        (function () {
+            var t = localStorage.getItem("blog-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 
 <body>
+    <div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
 
     <header>
         <div class="header-container">
+            <a href="index.html" class="brand">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span>My Blog</span>
+            </a>
 
-            <h1>My Blog</h1>
+            <div class="header-actions">
+                <nav id="main-nav" aria-label="Primary navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </nav>
 
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-            </nav>
+                <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme"></button>
 
+                <button type="button" id="menu-toggle" class="icon-btn menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-
     <main>
-
         <article class="full-article">
+            <div class="article-meta-bar">
+                <span class="category" data-cat="web-development">Web Development</span>
+                <button type="button" id="share-article" class="share-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                    <span>Copy Link</span>
+                </button>
+            </div>
 
-            <p class="category"> WEB DEVELOPMENT</p>
+            <h2>What I Learned While Building My First Blog With HTML and CSS</h2>
 
-    <h2>
-        What I Learned While Building My First Blog With HTML and CSS
-    </h2>
+            <div class="article-byline">
+                <span>Published: September 4, 2026</span>
+                <span>•</span>
+                <span id="article-read-time">2 min read</span>
+            </div>
 
-    <p class="date">
-        Published: September 4, 2026
-    </p>
+            <div id="article-toc" class="toc-box" hidden></div>
 
-    <p>
-        I recently started learning web development
-        and decided that instead of only watching tutorials,
-        I wanted to build something myself.
-        My first project became a simple blog using HTML and CSS.
-    </p>
+            <p>
+                I recently started learning web development and decided that instead of only watching tutorials, I wanted to build something myself. My first project became a simple blog using HTML and CSS.
+            </p>
 
-    <h3>Why I Decided to Build a Blog</h3>
+            <h3>Why I Decided to Build a Blog</h3>
+            <p>
+                I wanted a project that could help me practice web development while also giving me a place to document what I learn.
+            </p>
 
-    <p>
-       I wanted a project that could help me practice web development
-       while also giving me a place to document what I learn.
-    </p>
+            <h3>The First Version Looked Very Simple</h3>
+            <p>
+                My first page contained only headings, paragraphs, and a few navigation links. It looked plain because I had not added CSS yet.
+            </p>
 
-    <h3>The First Version Looked Very Simple</h3>
+            <h3>CSS Changed Everything</h3>
+            <p>
+                After adding CSS, I started understanding how spacing, width, fonts, backgrounds, and layouts affect the appearance of a webpage.
+            </p>
 
-    <p>
-        My first page contained only headings, paragraphs,
-       and a few navigation links.
-       It looked plain because I had not added CSS yet.
-    </p>
+            <h3>One Thing That Confused Me</h3>
+            <p>
+                One challenge was understanding how HTML and CSS connect. I learned that HTML creates the structure of the page, while CSS controls how that structure looks.
+            </p>
 
-    <h3>CSS Changed Everything</h3>
+            <h3>What I Learned</h3>
+            <p>
+                The biggest lesson was that building something myself helped me understand web development better than only watching tutorials.
+            </p>
 
-    <p>
-       After adding CSS, I started understanding how spacing,
-       width, fonts, backgrounds, and layouts affect the appearance
-        of a webpage.
-    </p>
+            <h3>What's Next?</h3>
+            <p>
+                My next goal is to continue improving this blog and start learning JavaScript so I can make the website more interactive.
+            </p>
 
-    <h3>One Thing That Confused Me</h3>
-
-    <p>
-       One challenge was understanding how HTML and CSS connect.
-       I learned that HTML creates the structure of the page,
-       while CSS controls how that structure looks.
-    </p>
-
-    <h3>What I Learned</h3>
-
-    <p>
-    The biggest lesson was that building something myself
-    helped me understand web development better than only
-    watching tutorials.
-    </p>
-
-    <h3>What's Next?</h3>
-
-    <p>
-      My next goal is to continue improving this blog
-      and start learning JavaScript so I can make the website
-      more interactive.
-    </p>
-
-
-            <a href="index.html" class="back-link">
-                ← Back to Articles
-            </a>
-
+            <div class="article-nav-footer">
+                <a href="index.html" class="back-link">← Back to Articles</a>
+                <a href="article-2.html" class="back-link">Next Article →</a>
+            </div>
         </article>
-
     </main>
 
-
     <footer>
-        <p>
-            © 2026 My Blog.
-        </p>
+        <div class="footer-container">
+            <p>© 2026 My Blog. Built while learning web development.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
     </footer>
 
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
